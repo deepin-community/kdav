@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.16)
 
-set(KF_VERSION "5.86.0") # handled by release scripts
-set(KF_DEP_VERSION "5.86.0") # handled by release scripts
+set(KF_VERSION "5.90.0") # handled by release scripts
+set(KF_DEP_VERSION "5.90.0") # handled by release scripts
 
 project(libkdav VERSION ${KF_VERSION})
 
-find_package(ECM 5.86.0 CONFIG REQUIRED)
+find_package(ECM 5.90.0 CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs)
@@ -26,14 +26,14 @@ include(ECMQtDeclareLoggingCategory)
 
 
 set(REQUIRED_QT_VERSION 5.15.2)
-find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core Gui XmlPatterns Test)
+find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core Gui Test)
 
 find_package(KF5 ${KF_DEP_VERSION} REQUIRED CoreAddons KIO I18n)
 
 # setup lib
 
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f02)
-add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055400)
+add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055900)
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")

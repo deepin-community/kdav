@@ -2,19 +2,21 @@ Source: kdav
 Section: libs
 Priority: optional
 Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
-Uploaders: Norbert Preining <norbert@preining.info>,
+Uploaders: Aurélien COUDERC <coucouf@debian.org>,
+           Norbert Preining <norbert@preining.info>,
            Sandro Knauß <hefee@debian.org>,
 Build-Depends: cmake (>= 3.16~),
                debhelper-compat (= 13),
                doxygen,
-               extra-cmake-modules (>= 5.86.0~),
-               libkf5coreaddons-dev (>= 5.86.0~),
-               libkf5i18n-dev (>= 5.86.0~),
-               libkf5kio-dev (>= 5.86.0~),
+               extra-cmake-modules (>= 5.90.0~),
+               libkf5coreaddons-dev (>= 5.90.0~),
+               libkf5i18n-dev (>= 5.90.0~),
+               libkf5kio-dev (>= 5.90.0~),
                libqt5xmlpatterns5-dev (>= 5.15.2~),
                pkg-kde-tools (>= 0.12),
                qhelpgenerator-qt5,
                qtbase5-dev (>= 5.15.2~),
+	       qttools5-dev (>= 5.15.2~),
                xauth,
                xvfb,
 Standards-Version: 4.6.0
@@ -43,7 +45,7 @@ Multi-Arch: same
 Breaks: libkpimkdav-dev
 Replaces: libkpimkdav-dev
 Depends: libkf5dav5 (= ${binary:Version}),
-         libkf5i18n-dev (>= 5.86.0~),
+         libkf5i18n-dev (>= 5.90.0~),
          libqt5xmlpatterns5-dev (>= 5.15.2~),
          qtbase5-dev (>= 5.15.2~),
          ${misc:Depends},

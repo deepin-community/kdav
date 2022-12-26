@@ -239,6 +239,7 @@ libKF5DAV.so.5 libkf5dav5 #MINVER#
  _ZNK4KDAV9EtagCache16changedRemoteIdsEv@Base 1:5.74.0
  _ZNK4KDAV9EtagCache4urlsEv@Base 1:5.74.0
  _ZNK4KDAV9EtagCache8containsERK7QString@Base 1:5.74.0
+ _ZNSt8_Rb_treeI7QStringS0_St9_IdentityIS0_ESt4lessIS0_ESaIS0_EE16_M_insert_uniqueIRKS0_EESt4pairISt17_Rb_tree_iteratorIS0_EbEOT_@Base 1:5.90.0
  _ZTIN4KDAV10DavJobBaseE@Base 1:5.74.0
  _ZTIN4KDAV15DavItemFetchJobE@Base 1:5.74.0
  _ZTIN4KDAV15DavItemsListJobE@Base 1:5.74.0
