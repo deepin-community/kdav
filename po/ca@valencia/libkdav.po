@@ -40,7 +40,7 @@ msgstr "No s'ha trobat el recurs"
 #: common/daverror.cpp:94
 #, kde-format
 msgid "HTTP error"
-msgstr "Error d'HTTP"
+msgstr "S'ha produït un error d'HTTP"
 
 #: common/daverror.cpp:96
 #, kde-format
@@ -62,7 +62,7 @@ msgid ""
 "The server encountered an error that prevented it from completing your "
 "request: %1 (%2)"
 msgstr ""
-"El servidor ha trobat un error que impedeix completar la vostra sol·licitud: "
+"El servidor ha trobat un error que impedix completar la vostra sol·licitud: "
 "%1 (%2)"
 
 #: common/daverror.cpp:105
@@ -72,7 +72,7 @@ msgid ""
 "from the server.\n"
 "%1 (%2)."
 msgstr ""
-"S'ha produït un problema amb la sol·licitud. La col·lecció no ha estat "
+"S'ha produït un problema amb la sol·licitud. La col·lecció no ha sigut "
 "eliminada del servidor.\n"
 "%1 (%2)."
 
@@ -84,7 +84,7 @@ msgstr "Respostes no vàlides del dorsal"
 #: common/daverror.cpp:111
 #, kde-format
 msgid "Error setting focus for XQuery"
-msgstr "Error en establir el focus a XQuery"
+msgstr "S'ha produït un error en establir el focus a XQuery"
 
 #: common/daverror.cpp:114
 #, kde-format
@@ -98,14 +98,14 @@ msgid ""
 "on the server.\n"
 "%1 (%2)."
 msgstr ""
-"S'ha produït un problema amb la sol·licitud. La col·lecció no ha estat "
+"S'ha produït un problema amb la sol·licitud. La col·lecció no ha sigut "
 "modificada en el servidor.\n"
 "%1 (%2)."
 
 #: common/daverror.cpp:124
 #, kde-format
 msgid "No properties to change or remove"
-msgstr "No hi ha cap propietat a canviar o eliminar"
+msgstr "No hi ha cap propietat que calga canviar o eliminar"
 
 #: common/daverror.cpp:127
 #, kde-format
@@ -130,7 +130,7 @@ msgid ""
 "server.\n"
 "%1 (%2)."
 msgstr ""
-"S'ha produït un problema amb la sol·licitud. L'element no ha estat creat en "
+"S'ha produït un problema amb la sol·licitud. L'element no ha sigut creat en "
 "el servidor.\n"
 "%1 (%2)."
 
@@ -141,7 +141,7 @@ msgid ""
 "server.\n"
 "%1 (%2)."
 msgstr ""
-"S'ha produït un problema amb la sol·licitud. L'element no ha estat eliminat "
+"S'ha produït un problema amb la sol·licitud. L'element no ha sigut eliminat "
 "del servidor.\n"
 "%1 (%2)."
 
@@ -152,7 +152,7 @@ msgid ""
 "server.\n"
 "%1 (%2)."
 msgstr ""
-"S'ha produït un problema amb la sol·licitud. L'element no ha estat modificat "
+"S'ha produït un problema amb la sol·licitud. L'element no ha sigut modificat "
 "en el servidor.\n"
 "%1 (%2)."
 

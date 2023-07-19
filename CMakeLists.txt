@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.16)
 
-set(KF_VERSION "5.90.0") # handled by release scripts
-set(KF_DEP_VERSION "5.90.0") # handled by release scripts
+set(KF_VERSION "5.103.0") # handled by release scripts
+set(KF_DEP_VERSION "5.103.0") # handled by release scripts
 
 project(libkdav VERSION ${KF_VERSION})
 
-find_package(ECM 5.90.0 CONFIG REQUIRED)
+find_package(ECM 5.103.0 CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs)
@@ -23,6 +23,7 @@ include(ECMAddQch)
 include(ECMAddTests)
 include(ECMInstallIcons)
 include(ECMQtDeclareLoggingCategory)
+include(ECMDeprecationSettings)
 
 
 set(REQUIRED_QT_VERSION 5.15.2)
@@ -32,12 +33,13 @@ find_package(KF5 ${KF_DEP_VERSION} REQUIRED CoreAddons KIO I18n)
 
 # setup lib
 
-add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f02)
-add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055900)
-
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
 
+ecm_set_disabled_deprecation_versions(
+    QT 5.15.2
+    KF 5.95
+)
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX KDAV
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kdav_version.h"
@@ -82,7 +84,7 @@ install(EXPORT KF5DAVTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5DA
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/kdav_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KF5 COMPONENT Devel
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KDAV COMPONENT Devel
     )
 
 

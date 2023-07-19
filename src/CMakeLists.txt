@@ -1,12 +1,17 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libkdav\")
-include_directories(
-   common/
-   protocols/
+
+set(KDAV_INSTALL_INCLUDEDIR "${KDE_INSTALL_INCLUDEDIR_KF}/KDAV")
+
+add_library(KF5DAV)
+add_library(KF5::DAV ALIAS KF5DAV)
+
+set_target_properties(KF5DAV PROPERTIES
+    VERSION     ${KDAV_VERSION}
+    SOVERSION   ${KDAV_SOVERSION}
+    EXPORT_NAME DAV
 )
 
-########### next target ###############
-
-set(libkdav_SRCS
+target_sources(KF5DAV PRIVATE
     common/davcollection.cpp
     common/davcollectiondeletejob.cpp
     common/davcollectiondeletejob.h
@@ -98,7 +103,7 @@ ecm_generate_headers(KDAV_Camelcase_HEADERS
 
 install(FILES
     ${KDAV_Camelcase_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KF5/KDAV
+    DESTINATION ${KDAV_INSTALL_INCLUDEDIR}/KDAV # for C++ namespace KDAV
     COMPONENT Devel
     )
 
@@ -106,12 +111,11 @@ install(FILES
     ${KDAV_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/kdav_export.h
 
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KF5/kdav
+    DESTINATION ${KDAV_INSTALL_INCLUDEDIR}/kdav # for C++ namespace KDAV
     COMPONENT Devel
     )
 
-
-ecm_qt_declare_logging_category(libkdav_SRCS
+ecm_qt_declare_logging_category(KF5DAV
     HEADER libkdav_debug.h
     IDENTIFIER KDAV_LOG
     CATEGORY_NAME kf.dav
@@ -120,14 +124,12 @@ ecm_qt_declare_logging_category(libkdav_SRCS
     EXPORT KDAV
 )
 
-
-add_library(KF5DAV
-   ${libkdav_SRCS}
-   )
-
 generate_export_header(KF5DAV BASE_NAME kdav)
 
-add_library(KF5::DAV ALIAS KF5DAV)
+target_include_directories(KF5DAV PRIVATE
+   common
+   protocols
+)
 
 target_link_libraries(KF5DAV
 PUBLIC
@@ -139,22 +141,17 @@ PRIVATE
     KF5::I18n
     )
 
-set_target_properties(KF5DAV PROPERTIES
-    VERSION ${KDAV_VERSION}
-    SOVERSION ${KDAV_SOVERSION}
-    EXPORT_NAME DAV
-    )
 
 install(TARGETS
     KF5DAV
     EXPORT KF5DAVTargets
-    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-    ${LIBRARY_NAMELINK}
+    ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
     )
 
-ecm_generate_pri_file(BASE_NAME kdav
+ecm_generate_pri_file(BASE_NAME KDAV
     LIB_NAME KF5DAV
-    FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KDAV
+    DEPS "KCoreAddons"
+    FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDAV_INSTALL_INCLUDEDIR}
     )
 
 install(FILES
@@ -162,7 +159,8 @@ install(FILES
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR}
     )
 
-target_include_directories(KF5DAV INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KF5/KDAV/;${KDE_INSTALL_INCLUDEDIR}/KF5/kdav;${KDE_INSTALL_INCLUDEDIR}/KF5>")
+target_include_directories(KF5DAV INTERFACE "$<INSTALL_INTERFACE:${KDAV_INSTALL_INCLUDEDIR}>")
+
 ecm_qt_install_logging_categories(EXPORT KDAV FILE kdav.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 
 if (BUILD_QCH)

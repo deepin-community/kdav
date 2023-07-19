@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 1:5.74.0 amd64
+# SymbolsHelper-Confirmed: 1:5.96.0 armel riscv64
 libKF5DAV.so.5 libkf5dav5 #MINVER#
 * Build-Depends-Package: libkf5dav-dev
  _ZN4KDAV10DavJobBase11qt_metacallEN11QMetaObject4CallEiPPv@Base 1:5.74.0
@@ -254,6 +254,11 @@ libKF5DAV.so.5 libkf5dav5 #MINVER#
  _ZTIN4KDAV27DavCollectionsMultiFetchJobE@Base 1:5.74.0
  _ZTIN4KDAV28DavPrincipalHomeSetsFetchJobE@Base 1:5.74.0
  _ZTIN4KDAV9EtagCacheE@Base 1:5.74.0
+ (arch=armel riscv64)_ZTIN9__gnu_cxx7__mutexE@Base 1:5.96.0
+ (arch=armel riscv64)_ZTISt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE1EE@Base 1:5.96.0
+ (arch=!armel !riscv64)_ZTISt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE@Base 1:5.96.0
+ (arch=armel riscv64)_ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE@Base 1:5.96.0
+ (arch=!armel !riscv64)_ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE@Base 1:5.96.0
  _ZTSN4KDAV10DavJobBaseE@Base 1:5.74.0
  _ZTSN4KDAV15DavItemFetchJobE@Base 1:5.74.0
  _ZTSN4KDAV15DavItemsListJobE@Base 1:5.74.0
@@ -268,6 +273,11 @@ libKF5DAV.so.5 libkf5dav5 #MINVER#
  _ZTSN4KDAV27DavCollectionsMultiFetchJobE@Base 1:5.74.0
  _ZTSN4KDAV28DavPrincipalHomeSetsFetchJobE@Base 1:5.74.0
  _ZTSN4KDAV9EtagCacheE@Base 1:5.74.0
+ (arch=armel riscv64)_ZTSN9__gnu_cxx7__mutexE@Base 1:5.96.0
+ (arch=armel riscv64)_ZTSSt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE1EE@Base 1:5.96.0
+ (arch=!armel !riscv64)_ZTSSt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE@Base 1:5.96.0
+ (arch=armel riscv64)_ZTSSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE@Base 1:5.96.0
+ (arch=!armel !riscv64)_ZTSSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE@Base 1:5.96.0
  _ZTVN4KDAV10DavJobBaseE@Base 1:5.74.0
  _ZTVN4KDAV15DavItemFetchJobE@Base 1:5.74.0
  _ZTVN4KDAV15DavItemsListJobE@Base 1:5.74.0
